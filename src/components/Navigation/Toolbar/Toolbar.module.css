@@ -23,3 +23,10 @@
 .Logo {
     height: 80%;
 }
+
+/* Remove navigation items in the toolbar just if we are not in mobile device*/
+@media (max-width: 499px) {
+    .DesktopOnly {
+        display: none;
+    }
+}

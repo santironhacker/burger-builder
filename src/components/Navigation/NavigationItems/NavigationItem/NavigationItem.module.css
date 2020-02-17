@@ -24,3 +24,32 @@
     border-bottom: 4px solid #40a4C8;
     color: white;
 }
+
+@media(min-width: 500px) {
+    .NavigationItem {
+        margin: 10px 0;
+        box-sizing: border-box;
+        display: block;
+        /* -- Height should be automatic compared to width 100% -- */
+        width: 100%;
+    }
+
+    .NavigationItem a {
+        color: #8F5C2C;
+        /* -- Always false on mobile -- */
+        /* text-decoration: none; */
+        width: 100%;
+        /* padding: 16px 10px; */
+        /* -- Always false on mobile -- */
+        /* border-bottom: 4px solid transparent; */
+        /* -- Inherited from properties with normal desktop display -- */
+        /* box-sizing: border-box;
+        display: block; */
+    }
+
+    .NavigationItem a:hover,
+    .NavigationItem a:active,
+    .NavigationItem a.active {
+        color: white;
+    }
+}
