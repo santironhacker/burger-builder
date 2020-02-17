@@ -26,9 +26,11 @@ class BurgerBuilder extends Component {
       meat: 0
     },
     totalPrice: 0,
-    purchasable: false
+    purchasable: false,
+    purchasing: false
   };
 
+  // ES6 syntax is important. Using arrow functions allows us to access with the 'this' keyword to the context state.
   addIngredientHandler = type => {
     const oldCount = this.state.ingredients[type];
     const updatedCount = oldCount + 1;
@@ -85,6 +87,10 @@ class BurgerBuilder extends Component {
     this.setState({ purchasable: sum > 0 });
   }
 
+  purchaseHandler = () => {
+    this.setState({ purchasing: true });
+  };
+
   render() {
     const disabledInfo = {
       ...this.state.ingredients
@@ -94,7 +100,7 @@ class BurgerBuilder extends Component {
     }
     return (
       <Auxiliary>
-        <Modal>
+        <Modal show={this.state.purchasing}>
           <OrderSummary ingredients={this.state.ingredients}></OrderSummary>
         </Modal>
         <Burger ingredients={this.state.ingredients}></Burger>
@@ -104,6 +110,7 @@ class BurgerBuilder extends Component {
           ingredientRemoved={this.removeIngredientHandler}
           price={this.state.totalPrice}
           purchasable={this.state.purchasable}
+          ordered={this.purchaseHandler}
         ></BuildControls>
       </Auxiliary>
     );
