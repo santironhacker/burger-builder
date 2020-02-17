@@ -23,7 +23,8 @@ class BurgerBuilder extends Component {
       cheese: 0,
       meat: 0
     },
-    totalPrice: 0
+    totalPrice: 0,
+    purchasable: false
   };
 
   addIngredientHandler = type => {
@@ -41,6 +42,7 @@ class BurgerBuilder extends Component {
       ingredients: updatedIngredients
     });
     console.log('Burguer price is ', this.totalPrice);
+    this.updatePurchaseState(updatedIngredients);
   };
 
   removeIngredientHandler = type => {
@@ -58,8 +60,28 @@ class BurgerBuilder extends Component {
         totalPrice: newPrice,
         ingredients: updatedIngredients
       });
+      this.updatePurchaseState(updatedIngredients);
     }
   };
+
+  updatePurchaseState(updatedIngredients) {
+    // Get ingredients latest state (pure copy, not a pointer)
+    /* const ingredients = {
+      ...this.state.ingredients
+    }; */
+    const ingredients = updatedIngredients;
+    // Get object of ingredients
+    const sum = Object.keys(ingredients)
+      // Get array of ingredients
+      .map(igKey => {
+        return ingredients[igKey];
+      })
+      // Get the sum of all ingredients
+      .reduce((sum, el) => {
+        return sum + el;
+      }, 0);
+    this.setState({ purchasable: sum > 0 });
+  }
 
   render() {
     const disabledInfo = {
@@ -76,6 +98,7 @@ class BurgerBuilder extends Component {
           ingredientAdded={this.addIngredientHandler}
           ingredientRemoved={this.removeIngredientHandler}
           price={this.state.totalPrice}
+          purchasable={this.state.purchasable}
         ></BuildControls>
       </Auxiliary>
     );
