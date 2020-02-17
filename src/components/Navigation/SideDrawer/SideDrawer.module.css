@@ -36,3 +36,7 @@
     /* Move it to the left so we hide it from the UI */
     transform: translateX(-100%);
 }
+
+.Logo{
+    height: 11%;
+}

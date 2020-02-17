@@ -19,3 +19,7 @@
     /* Make sure nav items relative to the toolbar are displayed full size */
     height: 100%
 }
+
+.Logo {
+    height: 80%;
+}
