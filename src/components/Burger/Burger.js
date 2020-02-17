@@ -6,9 +6,12 @@ const burger = props => {
   // Ingredients are passed as an object so we need to transform them to an array
   let transformedIngredients = Object.keys(props.ingredients)
     .map(igKey => {
+      // if (props.ingredients[igKey]) {
       return [...Array(props.ingredients[igKey])].map((_, i) => {
         return <BurgerIngredient key={igKey + i} type={igKey} />;
       });
+      // }
+      // return null;
     })
     .reduce((arr, el) => {
       return arr.concat(el);
