@@ -1,0 +1,21 @@
+.Toolbar {
+    height: 56px;
+    width: 100%;
+    /* Three next elements are to make the navbar fixed regardless of scrolling */
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #703B09;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    /* Should be lower index than toolbar z-index */
+    z-index: 90;
+}
+
+.Toolbar nav {
+    /* Make sure nav items relative to the toolbar are displayed full size */
+    height: 100%
+}
