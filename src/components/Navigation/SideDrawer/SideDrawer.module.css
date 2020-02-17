@@ -1,0 +1,38 @@
+.SideDrawer {
+    /* Should be always be on the page even if we scroll */
+    position: fixed;
+    width: 280px;
+    /* So it does never overflow even in big devices */
+    max-width: 70%;
+    height: 100%;
+    /* Makes element stay fixed respective to initial position */
+    left: 0;
+    top: 0;
+    /* Deliberately having a bigger index than toolbar */
+    z-index: 200;
+    background-color: white;
+    padding: 32px 16px;
+    /* Adjust the size of the element to the previous padding */
+    box-sizing: border-box;
+    /* To react to the animation with a time of 0.3 */
+    /* Important for opening an closing the side drawer */
+    transition: transform 0.3s ease-out;
+}
+
+/* We will never see the device in big screens */
+@media (min-width: 500px) {
+    .SideDrawer {
+        display: none;
+    }
+}
+
+/* Following two properties are dynamic */
+.Open {
+    /* Show it like in the props set inside .SideDrawer */
+    transform: translateX(0);
+}
+
+.Close {
+    /* Move it to the left so we hide it from the UI */
+    transform: translateX(-100%);
+}
