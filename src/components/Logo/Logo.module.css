@@ -1,0 +1,12 @@
+.Logo {
+    background-color: white;
+    padding: 8px;
+    height: 80%;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+/* Style the image inside so the image takes the full display it can inside the div */
+.Logo img {
+    height: 100%;
+}
