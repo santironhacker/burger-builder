@@ -8,9 +8,11 @@ const toolbar = props => (
   <header className={classes.Toolbar}>
     {/* <div onClick={props.opening}>MENU</div> */}
     <DrawerToggle clicked={props.drawerToggleClicked}></DrawerToggle>
-    <Logo className={classes.Logo}></Logo>
+    <div className={classes.Logo}>
+      <Logo />
+    </div>
     <nav className={classes.DesktopOnly}>
-      <NavigationItems></NavigationItems>
+      <NavigationItems />
     </nav>
   </header>
 );

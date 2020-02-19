@@ -24,12 +24,11 @@ class Layout extends Component {
   render() {
     return (
       <Auxiliary>
-        <div>Toolbar, SideDrawer, Backdrop</div>
         <Toolbar drawerToggleClicked={this.sideDrawerToggleHandler}></Toolbar>
         <SideDrawer
           open={this.state.showSideDrawer}
           closed={this.sideDrawerClosedHandler}
-        ></SideDrawer>
+        />
         <main className={classes.Content}>{this.props.children}</main>
       </Auxiliary>
     );

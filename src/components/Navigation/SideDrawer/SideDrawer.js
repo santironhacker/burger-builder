@@ -7,7 +7,7 @@ import Backdrop from '../../UI/Backdrop/Backdrop';
 
 const sideDrawer = props => {
   // Want to constantly add CSS for animations
-  let attachedClasses = [classes.SideDrawer, classes.Closed];
+  let attachedClasses = [classes.SideDrawer, classes.Close];
   if (props.open) {
     attachedClasses = [classes.SideDrawer, classes.Open];
   }
@@ -19,10 +19,10 @@ const sideDrawer = props => {
         {/* Logo class here is different from the one in Logo.js because of CSS modulesbundleRenderer.
           Here it has adapted height for responsive. */}
         <div className={classes.Logo}>
-          <Logo></Logo>
+          <Logo />
         </div>
         <nav>
-          <NavigationItems></NavigationItems>
+          <NavigationItems />
         </nav>
       </div>
     </Auxiliary>
