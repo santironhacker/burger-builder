@@ -4,6 +4,7 @@ import NavigationItems from '../NavigationItems/NavigationItems';
 import classes from './SideDrawer.module.css';
 import Auxiliary from '../../../hoc/Auxiliary';
 import Backdrop from '../../UI/Backdrop/Backdrop';
+import PropTypes from 'prop-types';
 
 const sideDrawer = props => {
   // Want to constantly add CSS for animations
@@ -27,6 +28,11 @@ const sideDrawer = props => {
       </div>
     </Auxiliary>
   );
+};
+
+sideDrawer.propTypes = {
+  closed: PropTypes.func,
+  open: PropTypes.bool
 };
 
 export default sideDrawer;

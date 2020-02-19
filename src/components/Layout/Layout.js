@@ -3,6 +3,7 @@ import Auxiliary from '../../hoc/Auxiliary';
 import classes from './Layout.module.css';
 import Toolbar from '../Navigation/Toolbar/Toolbar';
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer';
+import PropTypes from 'prop-types';
 
 class Layout extends Component {
   state = {
@@ -34,5 +35,13 @@ class Layout extends Component {
     );
   }
 }
+
+Layout.propTypes = {
+  // With PropTypes.element you can specify that only a single child can be passed to a component as children.
+  children: PropTypes.element.isRequired,
+  showSideDrawer: PropTypes.number,
+  sideDrawerClosedHandler: PropTypes.func,
+  sideDrawerToggleHandler: PropTypes.func
+};
 
 export default Layout;
