@@ -2,6 +2,8 @@ import React from 'react';
 import Auxiliary from '../../../hoc/Auxiliary';
 import Button from '../../UI/Button/Button';
 
+// Could be changed into stateful component to choose wether we want to rerender it again.
+// However, as it is contained in Modal element, if we check for the modal to rerender we also check for OrderSummary.
 const orderSummary = props => {
   const ingredientsSummary =
     // Get object keys
